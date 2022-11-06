@@ -194,8 +194,7 @@ report_capability(struct capability_info *cap, uint8_t len, uint32_t lo,
  *
  * Detects and prints VMX capabilities of this host's CPU.
  */
-void
-detect_vmx_features(void)
+void detect_vmx_features(void)
 {
 	uint32_t lo, hi;
 
@@ -204,6 +203,31 @@ detect_vmx_features(void)
 	pr_info("Pinbased Controls MSR: 0x%llx\n",
 		(uint64_t)(lo | (uint64_t)hi << 32));
 	report_capability(pinbased, 5, lo, hi);
+	/* Primary Process based controls */
+	rdmsr(IA32_VMX_PROCBASED_CTLS, lo, hi);
+	pr_info("Primary Process-Based Controls MSR: 0x%llx\n",
+		(uint64_t)(lo | (uint64_t)hi << 32));
+	report_capability(primary, 22, lo, hi);
+	/* Secondary Process based controls */
+	rdmsr(IA32_VMX_PROCBASED_CTLS2, lo, hi);
+	pr_info("Secondary Process-Based Controls MSR: 0x%llx\n",
+		(uint64_t)(lo | (uint64_t)hi << 32));
+	report_capability(secondary, 17, lo, hi);
+	/* Tertiary Process based controls */
+	rdmsr(IA32_VMX_PROCBASED_CTLS3, lo, hi);
+	pr_info("Tertiary Process-Based Controls MSR: 0x%llx\n",
+		(uint64_t)(lo | (uint64_t)hi << 32));
+	report_capability(tertiary, 2, lo, hi);
+	/* Exit controls */
+	rdmsr(IA32_VMX_EXIT_CTLS, lo, hi);
+	pr_info("Exit Controls MSR: 0x%llx\n",
+		(uint64_t)(lo | (uint64_t)hi << 32));
+	report_capability(exit_controls, 28, lo, hi);
+	/* Entry controls */
+	rdmsr(IA32_VMX_ENTRY_CTLS, lo, hi);
+	pr_info("Entry Controls MSR: 0x%llx\n",
+		(uint64_t)(lo | (uint64_t)hi << 32));
+	report_capability(entry_controls, 14, lo, hi);
 }
 
 /*
@@ -214,8 +238,7 @@ detect_vmx_features(void)
  * Return Values:
  *  Always 0
  */
-int
-init_module(void)
+int init_module(void)
 {
 	printk(KERN_INFO "CMPE 283 Assignment 1 Module Start\n");
 
@@ -232,8 +255,7 @@ init_module(void)
  *
  * Function called on module unload
  */
-void
-cleanup_module(void)
+void cleanup_module(void)
 {
 	printk(KERN_INFO "CMPE 283 Assignment 1 Module Exits\n");
 }
