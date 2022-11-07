@@ -1,6 +1,7 @@
-CMPE 283
-Assignment 1
+### CMPE 283
+#### Assignment 1
 
+**Steps I used to complete the assignment :**   
 1. Downloaded and installed VMware Fusion for Mac OS.
 2. Downloaded Ubuntu disk image from the internet.
 3. From the VMware dashboard, created a VM.
@@ -15,8 +16,8 @@ Assignment 1
 11. Cloned the forked linux repository. This took a long time to fetch and failed a few times before I could successfully pull the code.
 12. Similarly, inside the *cmpe283* directory, cloned the assignment repository (https://github.com/anesh13/assignment283) with the Makefile and .c files from Canvas.
 14. Update the .c file to include the other capabilities by referring to the SDM manual. The volume and sections have been mentioned in comments in the code.
-13. Inside this directory, ran the *make* command.
-14. Ran the *ls* command.
+15. Inside this directory, ran the *make* command.
+16. Ran the *ls* command.
   - Makefile
   - README.nd
   - cmpe283-1.k0
@@ -27,9 +28,9 @@ Assignment 1
   - cmpe283-1.mod.o
   - cmpe283-1.
   - modules.order
-15. Ran *sudo insmod ./cmpe283-1.ko* command.
-16. Once the module was inserted, ran the *sudo dmesg* to display driver messages.
-17. These are the outputs that the code I added generated.
+17. Ran *sudo insmod ./cmpe283-1.ko* command.
+18. Once the module was inserted, ran the *sudo dmesg* to display driver messages.
+19. These are the outputs that the code I added generated.
 [1039.551327] CMPE 283 Assignment 1 Module Start  
 [1039.551330] Pinbased Controls MSR: 0x3f00000016  
 [1039.551331] External Interrupt Exiting: Can set=Yes, Can clear=Yes  
