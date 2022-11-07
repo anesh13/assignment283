@@ -12,32 +12,32 @@
 7. Ran the
 >*sudo apt install make*
 
-and
+  and
 >*sudo apt install gcc*
 
-commands.  
+  commands.  
 8. Checked if gcc and make were properly installed by running
 >*gcc -v*
 
-and
+  and
 >*make -v*
 
-commands.  
+  commands.  
 9. Ran the
 >*sudo apt install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager*  
 
-command to install packages needed to build a kernel.  
+  command to install packages needed to build a kernel.  
 10. Created two directories by running the
 >*mkdir linuxrepo*  
 
-command and the
+  command and the
 >*mkdir cmpe283*  
 
-command.  
+  command.  
 10. Inside the
 >*linuxrepo*  
 
-directory, initialized git using
+  directory, initialized git using
 >*git init*  
 
 11. Cloned the forked linux repository. This took a long time to fetch and failed a few times before I could successfully pull the code.  
@@ -58,11 +58,11 @@ directory, initialized git using
 17. Ran
 >*sudo insmod ./cmpe283-1.ko*
 
-command.  
+  command.  
 18. Once the module was inserted, ran the
 >*sudo dmesg*
 
-to display driver messages.  
+  to display driver messages.  
 19. These are the outputs that the code I added generated:  
 [1039.551327] CMPE 283 Assignment 1 Module Start  
 [1039.551330] Pinbased Controls MSR: 0x3f00000016  
