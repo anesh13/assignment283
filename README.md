@@ -8,43 +8,48 @@
 3. From the VMware dashboard, created a VM.
 4. Enabled VT-X/EPT in the VM settings.
 5. Forked the https://github.com/torvalds/linux repository to my Github account (https://github.com/anesh13/linux).  
-6. On the VM's SSH shell, ran the *uname -r* command to check the OS version.  
-7. Ran the
+6. On the VM's SSH shell, ran the *uname -r* command to check the OS version.
+7. Ran the 
+>*cat /proc/cpuinfo | more*
+
+command to verify if nested virtualization is enabled from the flag values.  
+
+8. Ran the
 >*sudo apt install make*
 
   and
 >*sudo apt install gcc*
 
   commands.  
-8. Checked if gcc and make were properly installed by running
+9. Checked if gcc and make were properly installed by running
 >*gcc -v*
 
   and
 >*make -v*
 
   commands.  
-9. Ran the
+10. Ran the
 >*sudo apt install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager*  
 
   command to install packages needed to build a kernel.  
-10. Created two directories by running the
+11. Created two directories by running the
 >*mkdir linuxrepo*  
 
   command and the
 >*mkdir cmpe283*  
 
   command.  
-10. Inside the
+12. Inside the
 >*linuxrepo*  
 
   directory, initialized git using
 >*git init*  
 
-11. Cloned the forked linux repository. This took a long time to fetch and failed a few times before I could successfully pull the code.  
-12. Similarly, inside the *cmpe283* directory, cloned the assignment repository (https://github.com/anesh13/assignment283) with the Makefile and .c files from Canvas.  
-14. Updated the .c file to include the other capabilities by referring to the SDM manual. The volume and sections have been mentioned in comments in the code.  
-15. Inside this directory, ran the *make* command.  
-16. Ran the *ls* command.  
+13. Cloned the forked linux repository. This took a long time to fetch and failed a few times before I could successfully pull the code.  
+14. Similarly, inside the *cmpe283* directory, cloned the assignment repository (https://github.com/anesh13/assignment283) with the Makefile and .c files from Canvas.  
+15. Updated the .c file to include the other capabilities by referring to the SDM manual. The volume and sections have been mentioned in comments in the code.  
+16. Inside this directory, ran the *make* command.  
+17. Ran the *ls* command.  
   - Makefile
   - README.nd
   - cmpe283-1.k0
@@ -55,15 +60,15 @@
   - cmpe283-1.mod.o
   - cmpe283-1.
   - modules.order
-17. Ran
+18. Ran
 >*sudo insmod ./cmpe283-1.ko*
 
   command.  
-18. Once the module was inserted, ran the
+19. Once the module was inserted, ran the
 >*sudo dmesg*
 
   to display driver messages.  
-19. These are the outputs that the code I added generated:  
+20. These are the outputs that the code I added generated:  
 [1039.551327] CMPE 283 Assignment 1 Module Start  
 [1039.551330] Pinbased Controls MSR: 0x3f00000016  
 [1039.551331] External Interrupt Exiting: Can set=Yes, Can clear=Yes  
