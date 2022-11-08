@@ -39,10 +39,7 @@ command to verify if nested virtualization is enabled from the flag values.
 >*mkdir cmpe283*  
 
   command.  
-12. Inside the
->*linuxrepo*  
-
-  directory, initialized git using
+12. Inside the *linuxrepo* directory, initialized git using
 >*git init*  
 
 13. Cloned the forked linux repository. This took a long time to fetch and failed a few times before I could successfully pull the code.  
